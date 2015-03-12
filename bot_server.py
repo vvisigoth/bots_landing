@@ -4,7 +4,11 @@ import json
 
 import feedparser
 
-token = 'xoxb-4016156834-DnuKCa6r5LLjlT3fmDwfCYbi'
+f = open('roster.json', 'r')
+
+roster = json.loads(f.read())
+
+token = roster[0]['token']
 
 sc = SlackClient(token)
 
